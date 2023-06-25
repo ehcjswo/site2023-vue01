@@ -1,30 +1,31 @@
 <template>
-  <main>
-    <SliderSection attr="slider__wrap section nanum5" />
-    <IntroSection attr="intro__wrap Nanum5 section bg-blue" />
-    <PortSection attr="port__wrap Nanum5 section center bg-blue" />
-    <YoutubeSection attr="youtube__wrap Nanum5 section" />
-    <UnsplashSection attr="unsplash__wrap Nanum5 section bg-blue" />
-    <MovieSection attr="movies__wrap Nanum5 container section" />
-  </main>
+  <div>
+    <main>
+      <SliderSection attr="slider__wrap section Nanum5" />
+      <IntroSection attr="intro__wrap section bg-vue Nanum5" />
+      <PortSection attr="ports__wrap section center Nanum5" />
+      <YoutubeSection attr="youtube__wrap section bg-vue Nanum5" />
+      <UnsplashSection attr="unsplash__wrap section Nanum5" />
+      <MovieSection attr="movie__wrap section bg-vue Nanum5" />
+    </main>
+  </div>
 </template>
-
 <script>
+// @ is an alias to /src
 import SliderSection from "@/components/section/SliderSection.vue";
 import IntroSection from "@/components/section/IntroSection.vue";
 import PortSection from "@/components/section/PortSection.vue";
-import MovieSection from "@/components/section/MovieSection.vue";
 import YoutubeSection from "@/components/section/YoutubeSection.vue";
 import UnsplashSection from "@/components/section/UnsplashSection.vue";
-
+import MovieSection from "@/components/section/MovieSection.vue";
 export default {
   components: {
-    IntroSection,
     SliderSection,
+    IntroSection,
     PortSection,
-    MovieSection,
     YoutubeSection,
     UnsplashSection,
+    MovieSection,
   },
 };
 </script>

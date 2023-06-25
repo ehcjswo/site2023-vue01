@@ -3,7 +3,6 @@
     <h2>{{ title }}</h2>
   </div>
 </template>
-
 <script>
 export default {
   props: {
@@ -11,8 +10,7 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
+<style lang="scss" scoped>
 .cont__title > h2 {
   text-align: center;
   font-size: 5vw;

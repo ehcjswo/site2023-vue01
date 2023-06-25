@@ -1,33 +1,28 @@
 <template>
-  <div class="unsplash__cont container">
+  <div class="Unsplash__cont container">
     <ul>
-      <li v-for="(unsplash, index) in unsplashs" :key="index">
-        <a :href="`https://unsplash.com/photos/${unsplash.id}`" target="_blank">
-          <img :src="unsplash.urls.regular" :alt="unsplash.alt_description" />
+      <li v-for="(image, index) in images" :key="index">
+        <a :href="`https://unsplash.com/photos/${image.id}`" target="_blank">
+          <img :src="image.urls.regular" :alt="image.alt_description" />
         </a>
       </li>
     </ul>
   </div>
 </template>
-
 <script>
 export default {
   props: {
-    unsplashs: {
-      unsplashs: {
-        type: Array,
-        required: true,
-      },
+    images: {
+      type: Array,
+      required: true,
     },
   },
 };
 </script>
-
-<style lang="scss">
-.unsplash__cont {
+<style lang="scss" scoped>
+.Unsplash__cont {
   ul {
     column-count: 4;
-    column-gap: 20px;
 
     li {
       margin-bottom: 20px;

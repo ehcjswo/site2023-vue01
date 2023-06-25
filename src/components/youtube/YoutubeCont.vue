@@ -1,38 +1,32 @@
 <template>
-  <div class="youtube__cont container">
+  <div className="youtube__cont">
     <ul>
       <li v-for="(youtube, index) in youtubes" :key="index">
         <a
-          :href="`https://youtube.com/watch?v=${youtube.id.videoId}`"
+          :href="`https://www.youtube.com/watch?v=${youtube.id.videoId}`"
           target="_blank"
         >
           <img
             :src="youtube.snippet.thumbnails.medium.url"
             :alt="youtube.snippet.title"
           />
-          <em>
-            <span class="title">{{ youtube.snippet.channelTitle }}</span>
-          </em>
+          <span>{{ youtube.snippet.title }}</span>
         </a>
       </li>
     </ul>
   </div>
 </template>
-
 <script>
 export default {
   props: {
     youtubes: {
-      youtubes: {
-        type: Array,
-        required: true,
-      },
+      type: Array,
+      required: true,
     },
   },
 };
 </script>
-
-<style lang="scss">
+<style lang="scss" scoped>
 .youtube__cont {
   ul {
     display: flex;
@@ -41,19 +35,20 @@ export default {
     margin-bottom: 100px;
 
     li {
-      width: 24.333%;
+      width: 24%;
       margin-bottom: 4%;
 
       img {
-        border-radius: 4px;
+        width: 100%;
+        object-fit: cover;
       }
-
       span {
         display: block;
         margin: 4px 0;
-        white-space: nowrap;
         overflow: hidden;
+        white-space: nowrap;
         text-overflow: ellipsis;
+        -webkit-line-clamp: 1; /* 라인수 */
       }
     }
   }

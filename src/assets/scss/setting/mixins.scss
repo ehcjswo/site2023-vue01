@@ -4,28 +4,24 @@
   align-items: center;
   justify-content: center;
 }
-
-// 양쪽 정렬
+// 양쪽정렬
 @mixin flex-between {
   display: flex;
   justify-content: space-between;
 }
-
-// 중앙 정렬
+// 중앙정렬
 @mixin position-center {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
 // 한줄 효과
 @mixin line {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
-
 // 두줄 효과 이상
 @mixin line($num) {
   display: -webkit-box;
@@ -45,21 +41,15 @@
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: darken($bg-color, 20%);
+    background-color: darken($bg-color, 10%);
   }
 }
-
-// 보더
-@mixin border($radius) {
-  border-radius: ($radius);
-}
-
 // 아이콘
+
 @mixin icon($bg-color, $icon-image) {
   position: relative;
   padding-top: 70px;
-
-  &:before {
+  &::before {
     content: "";
     width: 60px;
     height: 60px;
@@ -71,7 +61,6 @@
     position: absolute;
     left: 0;
     top: 0;
-    transition: background-color 0.3s;
   }
   &:hover:before {
     background-color: darken($bg-color, 10%);
