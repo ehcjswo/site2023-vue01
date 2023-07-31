@@ -1,4 +1,4 @@
-Vue를 활용한 모던 아트 사이트
+## Vue를 활용한 모던 아트 사이트
 <img src="https://raw.githubusercontent.com/ehcjswo/site2023-vue01/main/src/assets/images/intro/gitImg01.jpg" />
 <br><br>
 
