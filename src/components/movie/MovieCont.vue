@@ -19,35 +19,32 @@
     </ul>
   </div>
 </template>
-
 <script>
 export default {
   props: {
     movies: {
-      movies: {
-        type: Array,
-        required: true,
-      },
+      type: Array,
+      required: true,
     },
   },
 };
 </script>
-
-<style lang="scss">
+<style lang="scss" scoped>
 .movie__cont {
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 2%;
 
     li {
       width: 24%;
       position: relative;
-      margin-bottom: 2%;
+
       .title {
-        display: inline-block;
         font-size: 20px;
-        padding: 3px;
+        padding: 3px 0;
+        display: inline-block;
 
         &:hover {
           text-decoration: underline;
@@ -60,11 +57,10 @@ export default {
         top: 20px;
         width: 30px;
         height: 30px;
-        background-color: #000;
+        background-color: #fff;
         text-align: center;
         line-height: 30px;
         border-radius: 50%;
-        color: #fff;
         font-size: 12px;
       }
     }

@@ -1,16 +1,14 @@
 <template>
   <section id="sliderSection" :class="attr">
     <div class="slider__inner">
+      <h2 class="blind">배너 슬라이드</h2>
       <swiper
+        :modules="modules"
         :slides-per-view="1"
-        :space-between="50"
+        :pagination="{ clickable: true }"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
-        :autoplay="{
-          delay: 2500,
-          disableOnInteraction: false,
-        }"
-        :modules="modules"
+        :autoplay="{ delay: 3000 }"
       >
         <swiper-slide v-for="(slider, index) in sliders" :key="index">
           <div class="slider__img">
@@ -18,12 +16,12 @@
               <div class="text">
                 <h3 v-html="slider.title"></h3>
                 <p v-html="slider.desc"></p>
-                <a href="#" class="more button-1">더보기</a>
+                <a href="#" class="more button-blue">더 알아보기</a>
               </div>
               <div class="img" aria-label="hidden">
-                <img :src="slider.iconimage1" :alt="slider.title" />
-                <img :src="slider.iconimage2" :alt="slider.title" />
-                <img :src="slider.iconimage3" :alt="slider.title" />
+                <img :src="slider.iconImage1" :alt="slider.title" />
+                <img :src="slider.iconImage2" :alt="slider.title" />
+                <img :src="slider.iconImage3" :alt="slider.title" />
               </div>
               <div class="circle" aria-label="hidden">
                 <span class="circle c1"></span>
@@ -36,44 +34,31 @@
           </div>
         </swiper-slide>
       </swiper>
+      <div class="slider__btn">
+        <a href="#" class="left"><span class="ir">이전이미지</span></a>
+        <a href="#" class="right"><span class="ir">다음이미지</span></a>
+      </div>
+      <div class="slider__dot">
+        <a href="#" class="dot active"><span class="ir">1번 이미지</span></a>
+        <a href="#" class="dot"><span class="ir">2번 이미지</span></a>
+        <a href="#" class="dot"><span class="ir">3번 이미지</span></a>
+      </div>
     </div>
   </section>
 </template>
 <script>
-import { Autoplay } from "swiper";
+// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
+// import Swiper core and required modules
+import { Navigation, Pagination, Autoplay } from "swiper";
+
+// Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 export default {
-  props: {
-    attr: String,
-  },
-  data: function () {
-    return {
-      sliders: [
-        {
-          title: "Books<br /> broaden <br />minds",
-          desc: "책은 우리에게 새로운 가치와 인사이트를 주며,<br /> 인생의 여러 측면을 탐구하는 기회를 제공합니다.",
-          iconimage1: "./images/slider/sliderIcon1.png",
-          iconimage2: "./images/slider/sliderIcon2.png",
-          iconimage3: "./images/slider/sliderIcon3.png",
-        },
-        {
-          title: "Books<br /> broaden <br />minds",
-          desc: "책은 우리에게 새로운 가치와 인사이트를 주며,<br /> 인생의 여러 측면을 탐구하는 기회를 제공합니다.",
-          iconimage1: "./images/slider/sliderIcon1.png",
-          iconimage2: "./images/slider/sliderIcon2.png",
-          iconimage3: "./images/slider/sliderIcon3.png",
-        },
-        {
-          title: "Books<br /> broaden <br />minds",
-          desc: "책은 우리에게 새로운 가치와 인사이트를 주며,<br /> 인생의 여러 측면을 탐구하는 기회를 제공합니다.",
-          iconimage1: "./images/slider/sliderIcon1.png",
-          iconimage2: "./images/slider/sliderIcon2.png",
-          iconimage3: "./images/slider/sliderIcon3.png",
-        },
-      ],
-    };
-  },
   components: {
     Swiper,
     SwiperSlide,
@@ -88,12 +73,43 @@ export default {
     return {
       onSwiper,
       onSlideChange,
-      modules: [Autoplay],
+      modules: [Navigation, Pagination, Autoplay],
+    };
+  },
+  props: {
+    attr: String,
+  },
+  data: function () {
+    return {
+      sliders: [
+        {
+          title: "My <br />portfolio",
+          desc: " 재능은! 노력 끝에서 발견된다. <br />어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.",
+          iconImage1: "./images/slider/icon1.png",
+          iconImage2: "./images/slider/icon2.png",
+          iconImage3: "./images/slider/icon3.png",
+        },
+        {
+          title: "My <br />portfolio",
+          desc: " 재능은! 노력 끝에서 발견된다. <br />어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.",
+          iconImage1: "./images/slider/icon4.png",
+          iconImage2: "./images/slider/icon5.png",
+          iconImage3: "./images/slider/icon6.png",
+        },
+        {
+          title: "My <br />portfolio",
+          desc: " 재능은! 노력 끝에서 발견된다. <br />어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.",
+          iconImage1: "./images/slider/icon7.png",
+          iconImage2: "./images/slider/icon1.png",
+          iconImage3: "./images/slider/icon5.png",
+        },
+      ],
     };
   },
 };
 </script>
 <style lang="scss">
+// slider__wrap
 .swiper {
   overflow: visible;
 }
@@ -101,9 +117,10 @@ export default {
   bottom: -80px !important;
 }
 .slider__inner {
-  overflow: hidden;
-  padding: 100px 0;
   position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+
   .slider__img {
     .slider {
       .text {
@@ -113,14 +130,17 @@ export default {
           text-transform: uppercase;
           line-height: 1;
           margin-bottom: 40px;
+          // padding-top: 100px;
+          // margin-top: 120px;
         }
         p {
           font-size: 24px;
-          line-height: 1.3;
+          line-height: 1.2;
           margin-bottom: 50px;
         }
         .more {
           font-size: 18px;
+          border-radius: 3px;
         }
       }
       .img {
@@ -129,7 +149,7 @@ export default {
         top: -120px;
         width: 600px;
         height: 600px;
-        background-image: url(@/assets/images/slider/sliderIBg.png);
+        background-image: url(../../assets/images/slider/one.png);
         background-size: cover;
         img {
           &:nth-child(1) {
@@ -139,14 +159,13 @@ export default {
           &:nth-child(2) {
             position: absolute;
             width: 300px;
-            right: 0;
-            bottom: 140px;
+            bottom: 0;
           }
           &:nth-child(3) {
             position: absolute;
             width: 300px;
-            bottom: 0;
-            left: 30px;
+            right: 0;
+            top: 170px;
           }
         }
       }
@@ -195,6 +214,7 @@ export default {
       }
     }
   }
+  //yosebnim babo
   .slider__btn {
     > a {
       position: absolute;
@@ -209,17 +229,17 @@ export default {
     }
     .left {
       left: 20px;
-      background-image: url(@/assets/images/slider/slider_left.png);
+      background-image: url(../../assets/images/slider/slider__left.png);
     }
     .right {
       right: 20px;
-      background-image: url(@/assets/images/slider/slider_right.png);
+      background-image: url(../../assets/images/slider/slider__right.png);
     }
   }
   .slider__dot {
     position: absolute;
     left: 50%;
-    bottom: -80px;
+    bottom: -20%;
     transform: translateX(-50%);
     a {
       display: inline-block;

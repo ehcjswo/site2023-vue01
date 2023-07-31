@@ -1,37 +1,33 @@
 <template>
-  <footer
-    id="footer"
-    role="contentinfo"
-    class="footer__wrap section bg-blue gmarket5"
-  >
+  <footer id="footer" class="footer__wrap section Nanum5" role="contentinfo">
     <div class="footer__inner container">
       <div class="footer__text">
-        <h5>webstoryboy</h5>
+        <h5>KDH</h5>
         <p>
-          질문 환영 🥳 <br />
-          궁금한 사항은 메일로 연락주세요!
-          <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+          안녕하세요! <br />
+          더 다양한 정보와 문의는 이메일을 통해주세요 <br />
+          ehcjswo1@gmail.com
         </p>
         <ul class="sns">
           <li>
-            <a href="/">
-              <span class="ir">페이스북</span>
-            </a>
+            <router-link to="/">
+              <!-- <img src="@/assets/images/footer/snsIcon.svg" alt="페이스북" /> -->
+            </router-link>
           </li>
           <li>
-            <a href="/">
-              <span class="ir">인스타</span>
-            </a>
+            <router-link to="/">
+              <!-- <img src="@/assets/images/footer/snsIcon.svg" alt="인스타그램" /> -->
+            </router-link>
           </li>
           <li>
-            <a href="/">
-              <span class="ir">유투브</span>
-            </a>
+            <router-link to="/">
+              <!-- <img src="@/assets/images/footer/snsIcon.svg" alt="유튜브" /> -->
+            </router-link>
           </li>
           <li>
-            <a href="/">
-              <span class="ir">깃</span>
-            </a>
+            <router-link to="/">
+              <!-- <img src="@/assets/images/footer/snsIcon.svg" alt="깃헙" /> -->
+            </router-link>
           </li>
         </ul>
       </div>
@@ -40,16 +36,16 @@
           <h4>사이트</h4>
           <ul>
             <li>
-              <a href="/">웹표준 사이트</a>
+              <router-link to="/">웹표준 사이트</router-link>
             </li>
             <li>
-              <a href="/">반응형 사이트</a>
+              <router-link to="/">반응형 사이트</router-link>
             </li>
             <li>
-              <a href="/">패럴랙스 사이트</a>
+              <router-link to="/">패럴랙스 사이트</router-link>
             </li>
             <li>
-              <a href="/">리액트 사이트</a>
+              <router-link to="/">포트폴리오 사이트</router-link>
             </li>
           </ul>
         </div>
@@ -57,22 +53,22 @@
           <h4>유형</h4>
           <ul>
             <li>
-              <a href="/">이미지 유형</a>
+              <router-link to="/">이미지 유형</router-link>
             </li>
             <li>
-              <a href="/">카드 유형</a>
+              <router-link to="/">카드 유형</router-link>
             </li>
             <li>
-              <a href="/">이미지/텍스트 유형</a>
+              <router-link to="/">이미지/텍스트 유형</router-link>
             </li>
             <li>
-              <a href="/">배너 유형</a>
+              <router-link to="/">배너 유형</router-link>
             </li>
             <li>
-              <a href="/">텍스트 유형</a>
+              <router-link to="/">텍스트 유형</router-link>
             </li>
             <li>
-              <a href="/">푸터 유형</a>
+              <router-link to="/">푸터 유형 </router-link>
             </li>
           </ul>
         </div>
@@ -80,22 +76,22 @@
           <h4>스크립트</h4>
           <ul>
             <li>
-              <a href="/">검색 이펙트</a>
+              <router-link to="/">검색 이펙트</router-link>
             </li>
             <li>
-              <a href="/">퀴즈 이팩트</a>
+              <router-link to="/">퀴즈 이펙트</router-link>
             </li>
             <li>
-              <a href="/">마우스 이펙트</a>
+              <router-link to="/">마우스 이펙트</router-link>
             </li>
             <li>
-              <a href="/">슬라이드 이펙트</a>
+              <router-link to="/">슬라이드 이펙트</router-link>
             </li>
             <li>
-              <a href="/">패럴랙스 이펙트</a>
+              <router-link to="/">패랠랙스 이펙트</router-link>
             </li>
             <li>
-              <a href="/">게임 이펙트</a>
+              <router-link to="/">게임 이팩트</router-link>
             </li>
           </ul>
         </div>
@@ -103,114 +99,108 @@
           <h4>레퍼런스</h4>
           <ul>
             <li>
-              <a href="/">CSS</a>
+              <router-link to="/">CSS</router-link>
             </li>
             <li>
-              <a href="/">FONTS</a>
+              <router-link to="/">FONTS</router-link>
             </li>
             <li>
-              <a href="/">HTML</a>
+              <router-link to="/">BLOG</router-link>
             </li>
             <li>
-              <a href="/">JAVASCRIPT</a>
+              <router-link to="/">REFERENCE</router-link>
             </li>
             <li>
-              <a href="/">REACT</a>
+              <router-link to="/">TUTORIAL</router-link>
             </li>
           </ul>
         </div>
       </div>
       <div class="footer__right">
-        Copyright 2022. All Rights Reserved. - Designed by Webstoryboy
+        <p>Copyright 2022. All Rights Reserved. - Designed by KDH</p>
       </div>
     </div>
   </footer>
 </template>
-
 <style lang="scss">
-// footer__inner
-.footer__inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  .footer__text {
-    width: 20%;
-
-    h5 {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 16px;
-      color: #808080;
-
-      a {
-        text-decoration: underline;
-        text-underline-position: under;
-        padding-top: 5px;
-        display: inline-block;
-      }
-    }
-    .sns {
-      li {
-        display: inline;
-        a {
-          display: inline-block;
-          width: 45px;
-          height: 45px;
-          border-radius: 45px;
-          background-color: #fff;
-          background-image: url(../../assets/images/footer/footerIcon.svg);
-        }
-
-        &:nth-child(2) a {
-          background-position: -45px 0;
-        }
-        &:nth-child(3) a {
-          background-position: -90px 0;
-        }
-        &:nth-child(4) a {
-          background-position: -135px 0;
-        }
-      }
-    }
-  }
-  .footer__menu {
-    width: 70%;
+//footer__wrap
+.footer__wrap {
+  .footer__inner {
     display: flex;
-
-    > div {
-      width: 25%;
-
-      h4 {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .footer__text {
+      width: 30%;
+      > h5 {
         font-size: 18px;
-        color: #000;
-        margin-bottom: 20px;
+        line-height: 1.2;
+        font-weight: 400;
+        margin-bottom: 25px;
       }
-
-      a {
+      > p {
         font-size: 14px;
-        color: #808080;
-        line-height: 1.8;
-        transition: all 0.3s;
-
-        &:hover {
-          text-decoration: underline;
-          text-underline-position: under;
-          color: #000;
+        line-height: 1.7;
+        font-weight: 400;
+        color: #909090;
+        margin-bottom: 30px;
+      }
+      > ul {
+        > li {
+          display: inline;
+          > a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background-color: #fff;
+            background-image: url(../../assets/images/footer/snsIcon.svg);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+          }
+          a:hover {
+            background-color: #e0e9ff;
+          }
+          &:nth-child(2) a {
+            background-position: -45px 0;
+          }
+          &:nth-child(3) a {
+            background-position: -90px 0;
+          }
+          &:nth-child(4) a {
+            background-position: -135px 0;
+          }
         }
       }
     }
-  }
-  .footer__right {
-    width: 100%;
-    padding: 30px;
-    text-align: center;
-    border-top: 1px solid #e5e5e5;
-    margin-top: 50px;
-    color: #808080;
-    font-size: 14px;
+    .footer__menu {
+      width: 70%;
+      display: flex;
+      > div {
+        width: 25%;
+        > h4 {
+          font-size: 18px;
+          font-weight: 400;
+          margin-bottom: 20px;
+        }
+        > ul {
+          > li {
+            > a {
+              font-weight: 400;
+              color: #808080;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .footer__right {
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 50px;
+      color: #808080;
+      font-size: 14px;
+    }
   }
 }
 </style>

@@ -1,37 +1,36 @@
 <template>
   <header
     id="header"
-    class="header__wrap gmarket5 bg-blue"
+    class="header__wrap Nanum5 bg-vue"
     role="heading"
     aria-level="1"
   >
     <div class="header__inner container">
       <h1 class="header__logo">
-        <router-link to="/"> web <em>site</em></router-link>
+        <router-link to="/"> DH <em>site</em> </router-link>
       </h1>
       <nav class="header__nav" role="navigation">
         <ul>
           <li>
-            <router-link to="/intro">소개</router-link>
+            <router-link to="intro">소개</router-link>
           </li>
           <li>
-            <router-link to="/port">포트폴리오</router-link>
+            <router-link to="port">대표 메뉴</router-link>
           </li>
           <li>
-            <router-link to="/youtube">유투브</router-link>
+            <router-link to="youtube">유튜브</router-link>
           </li>
           <li>
-            <router-link to="/unsplash">이미지</router-link>
+            <router-link to="unsplash">이미지</router-link>
           </li>
           <li>
-            <router-link to="/movie">영화</router-link>
+            <router-link to="movie">영화</router-link>
           </li>
         </ul>
       </nav>
     </div>
   </header>
 </template>
-
 <style lang="scss">
 // header__wrap
 .header__inner {
@@ -56,6 +55,7 @@
   }
   .header__nav {
     width: 100%;
+
     ul {
       padding: 0 10%;
       display: flex;
@@ -64,7 +64,7 @@
       li {
         a {
           display: inline-block;
-          padding: 10px;
+          padding: 20px 10px;
           margin: 2px;
           position: relative;
 
@@ -75,7 +75,7 @@
             background-color: var(--color_body);
             position: absolute;
             left: 10px;
-            bottom: 4px;
+            bottom: 16px;
             transform: scaleX(0);
             transition: all 0.3s ease;
           }

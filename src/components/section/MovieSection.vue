@@ -1,140 +1,89 @@
 <template>
-  <section id="movieSection" :class="attr">
+  <section id="movieSection" class="movie__wrap section nexon5 bg-vue">
     <div class="movie__inner container">
       <div class="movie__text">
-        <h3>코딩 영화 추천</h3>
+        <h3>추천 영화</h3>
         <p>
-          더 다양한 강의는 유튜브를 통해 제공하고 있습니다. <br />구독과 좋아요!
-          부탁드립니다.
+          요리에 관련된 영화 목록입니다.<br />
+          영화를 보고 셰프에 대해 알아봅시다!
         </p>
-        <a href="#" class="button-green">자세히 보기</a>
+        <router-link to="/" class="button-green">자세히 보기</router-link>
       </div>
       <div class="movie__item">
         <div>
-          <img src="@/assets/images/movie/movie01.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/movie/movie_1.png" alt="movie"
+          /></router-link>
         </div>
         <div>
-          <img src="@/assets/images/movie/movie02.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/movie/movie_2.png" alt="movie"
+          /></router-link>
         </div>
         <div>
-          <img src="@/assets/images/movie/movie03.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/movie/movie_3.png" alt="movie"
+          /></router-link>
         </div>
         <div>
-          <img src="@/assets/images/movie/movie04.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/movie/movie_4.png" alt="movie"
+          /></router-link>
         </div>
         <div>
-          <img src="@/assets/images/movie/movie05.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/movie/movie_5.png" alt="movie"
+          /></router-link>
         </div>
         <div>
-          <img src="@/assets/images/movie/movie06.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/movie/movie_6.png" alt="movie"
+          /></router-link>
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<script>
-export default {
-  props: {
-    attr: String,
-  },
-};
-</script>
-
 <style lang="scss">
-// movie__section
 .movie__wrap {
   overflow: hidden;
-}
-.movie__inner {
-  height: 780px;
 
-  .movie__text {
-    h3 {
-      font-size: 50px;
-      margin-bottom: 40px;
-    }
-    p {
-      font-size: 22px;
-      font-weight: 300;
-      margin-bottom: 30px;
-    }
-    a {
-      @include border(50px);
-    }
-  }
-  .movie__item {
-    @include flex-between;
-    margin-top: 70px;
-    position: absolute;
+  .movie__inner {
+    height: 650px;
+    .movie__text {
+      > h3 {
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: 40px;
+      }
+      > p {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 25px;
+      }
 
-    > div {
-      width: 300px;
-      margin-right: 20px;
-
-      img {
-        width: 100%;
-        @include border(10px);
+      > a {
+        border-radius: 50px;
       }
     }
-  }
-}
 
-// movie__page
-.movie__slider {
-  display: none;
-}
-.movie__search {
-  text-align: center;
-  margin-bottom: 50px;
+    .movie__item {
+      padding-top: 70px;
+      display: flex;
+      position: absolute;
+      > div {
+        width: 270px;
+        margin-right: 27px;
 
-  input {
-    border: 1px solid #e8ecf2;
-    font-size: 16px;
-    padding: 10px 20px;
-    @include border(50px);
-    min-width: 300px;
-    margin-right: 10px;
-  }
-  button {
-    @include button(#4857ec, #fff);
-    @include border(50px);
-  }
-}
-.movie__tag {
-  ul {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 50px;
-
-    li {
-      a {
-        border: 1px solid #4857ec;
-        padding: 10px 20px;
-        margin: 0 10px;
-        color: #4857ec;
-      }
-    }
-  }
-}
-.movie__cont {
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 100px;
-
-    li {
-      width: 19%;
-      margin-bottom: 4%;
-
-      img {
-        border-radius: 10px;
-      }
-      span {
-        display: block;
-        margin: 4px 0;
+        > a {
+          > img {
+            border-radius: 10px;
+            width: 100%;
+            height: 413px;
+          }
+        }
       }
     }
   }

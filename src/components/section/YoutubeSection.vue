@@ -2,31 +2,48 @@
   <section id="youtubeSection" :class="attr">
     <div class="youtube__inner container">
       <div class="youtube__text">
-        <h3>코딩 유튜버 추천</h3>
+        <h3>유튜브 추천</h3>
         <p>
-          더 다양한 강의는 유튜브를 통해 제공하고 있습니다. <br />구독과 좋아요!
-          부탁드립니다.
+          더 다양한 강의는 유튜브를 통해 제공하고 있습니다. <br />구독과 좋아요
+          부탁드립니다!
         </p>
-        <a href="#" class="button-red">자세히 보기</a>
+        <router-link to="/" class="button-red">자세히 보기</router-link>
       </div>
       <div class="youtube__item">
         <div>
-          <img src="@/assets/images/youtube/youtube01.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/youtube/youtube_1.png" alt="youtube"
+          /></router-link>
         </div>
         <div>
-          <img src="@/assets/images/youtube/youtube02.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/youtube/youtube_2.png" alt="youtube"
+          /></router-link>
         </div>
         <div>
-          <img src="@/assets/images/youtube/youtube03.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/youtube/youtube_3.png" alt="youtube"
+          /></router-link>
         </div>
         <div>
-          <img src="@/assets/images/youtube/youtube04.jpg" alt="유투브" />
+          <router-link to="/"
+            ><img src="@/assets/images/youtube/youtube_4.png" alt="youtube"
+          /></router-link>
+        </div>
+        <div>
+          <router-link to="/"
+            ><img src="@/assets/images/youtube/youtube_1.png" alt="youtube"
+          /></router-link>
+        </div>
+        <div>
+          <router-link to="/"
+            ><img src="@/assets/images/youtube/youtube_2.png" alt="youtube"
+          /></router-link>
         </div>
       </div>
     </div>
   </section>
 </template>
-
 <script>
 export default {
   props: {
@@ -34,74 +51,89 @@ export default {
   },
 };
 </script>
-
 <style lang="scss">
-// youtube__section
+// youtube__wrap
+
 .youtube__wrap {
   overflow: hidden;
-}
-.youtube__inner {
-  height: 560px;
 
-  .youtube__text {
-    h3 {
-      font-size: 50px;
-      margin-bottom: 40px;
-    }
-    p {
-      font-size: 22px;
-      font-weight: 300;
-      margin-bottom: 30px;
-    }
-    a {
-      @include border(50px);
-    }
-  }
-  .youtube__item {
-    @include flex-between;
-    margin-top: 70px;
-    position: absolute;
+  .youtube__inner {
+    height: 500px;
+    .youtube__text {
+      > h3 {
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: 40px;
+      }
+      > p {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 25px;
+      }
 
-    > div {
-      width: 400px;
-      margin-right: 20px;
+      > a {
+        border-radius: 50px;
+      }
+    }
 
-      img {
-        width: 100%;
-        @include border(10px);
+    .youtube__item {
+      padding-top: 70px;
+      display: flex;
+      position: absolute;
+      > div {
+        width: 400px;
+        margin-right: 27px;
+
+        > a {
+          > img {
+            border-radius: 10px;
+            width: 100%;
+            height: 226px;
+          }
+        }
       }
     }
   }
 }
 
-// youtube__page
 .youtube__slider {
-  display: none;
+  width: 100%;
+  a {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
 .youtube__search {
   text-align: center;
   margin-bottom: 50px;
+  margin-top: 50px;
 
   input {
     border: 1px solid #e8ecf2;
     font-size: 16px;
     padding: 10px 20px;
-    @include border(50px);
+    // @include border(50px);
     min-width: 300px;
     margin-right: 10px;
   }
+
   button {
     @include button(#f7100d, #fff);
-    @include border(50px);
+    // @include border(50px)
   }
 }
 .youtube__tag {
+  // display: none
+
   ul {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
     margin-bottom: 50px;
-
+    margin-top: 50px;
     li {
       a {
         border: 1px solid #f7100d;
@@ -120,12 +152,20 @@ export default {
     margin-bottom: 100px;
 
     li {
-      width: 31.333%;
+      width: 24%;
       margin-bottom: 4%;
 
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
       span {
         display: block;
         margin: 4px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1; /* 라인수 */
       }
     }
   }

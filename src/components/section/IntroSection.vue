@@ -3,7 +3,7 @@
     <h3 class="blind">프론트앤드 커리큘럼 과정 소개</h3>
     <div class="intro__inner container">
       <div class="intro__title">
-        <span>frontend</span>
+        <span>Portfolio</span>
         <h3 v-html="title"></h3>
         <p v-html="desc"></p>
       </div>
@@ -14,11 +14,20 @@
             {{ text.desc }}
           </p>
         </div>
+        <!-- <div>
+          <router-link to="https://kebab00.tistory.com/"
+            ><h4 class="icon-bg1">Tistory</h4></router-link
+          >
+          <p>
+            수업을 시작하면서 개설한 Tistory 블로그 입니다. 그동안 배운 것들을
+            모두 정리하고 복습한 사이트이며 HTML, CSS, PHP, JavaScript,
+            Programmers등이 정리되어 있습니다.
+          </p>
+        </div> -->
       </div>
     </div>
   </section>
 </template>
-
 <script>
 export default {
   props: {
@@ -26,40 +35,45 @@ export default {
   },
   data: function () {
     return {
-      title: "프론트앤드<br />전문과정",
-      desc: "프론트앤드 개발자로 취업하기 위한<br />전문 과정입니다.<br />여러분들도 도전해보세요!",
+      title: " 한국<br/>유명한 셰프",
+      desc: "한국에서 유명한 셰프들의 다양한 음식 <br/>여러분들도 도전해보세요!",
       texts: [
         {
-          title: "React.js",
-          desc: "리액트는 Facebook에서 개발한 오픈 소스 자바스크립트 라이브러리입니다. 리액트를 사용하면 컴포넌트 기반의 UI 개발을 간편하게 할 수 있습니다. 리액트의 주요 특징은 가상 DOM(Virtual DOM)을 사용하여 성능을 최적화하고, 컴포넌트의 재사용성을 높이는 것입니다",
+          title: "한식",
+          desc: " 건강하고 균형 잡힌 식단. 한식은 쌀, 김치, 채소, 고기등 다양한 식재료를 사용하여 영양 균형을 중요시 합니다.",
         },
         {
-          title: "Vue.js",
-          desc: "뷰는 Evan You에 의해 개발된 오픈 소스 자바스크립트 프론트엔드 프레임워크입니다. 리액트와 마찬가지로 컴포넌트 기반의 UI 개발을 지원하며, 가상 DOM을 사용하여 성능을 향상시킵니다",
+          title: "중식",
+          desc: "매우 다양한 맛과 향: 중국 음식은 달콤한, 짭짤한, 매운, 쓴 맛 등 다양한 맛을 가집니다. 향신료와 조미료를 많이 사용하여 풍부한 향을 내며, 지역에 따라 맛의 차이가 있습니다.",
         },
         {
-          title: "Next.js",
-          desc: "넥스트.js는 리액트 기반의 서버 사이드 렌더링(SSR) 및 정적 사이트 생성(Static Site Generation)을 지원하는 프레임워크입니다. 넥스트.js를 사용하면 서버 측에서 초기 렌더링을 수행하여 초기 로딩 속도를 개선하고, 검색 엔진 최적화(SEO)를 향상시킬 수 있습니다",
+          title: "일식",
+          desc: "신선하고 자연스러운 재료를 사용하여 깔끔하고 아름다운 음식을 만듭니다. 일본 요리는 장식과 조리법에 많은 주의를 기울입니다.",
         },
         {
-          title: "Webstandard",
-          desc: "웹 표준 코딩은 웹 개발에서 일관된 기술 표준을 준수하여 웹 페이지를 개발하는 것을 말합니다. 이는 웹 페이지의 구조, 디자인 및 기능을 구현하는 데 사용되는 HTML, CSS, JavaScript 등의 웹 기술에 적용됩니다",
+          title: "양식",
+          desc: "서양의 요리 스타일을 의미하며, 주로 유럽과 미국을 기반으로 합니다. 고기, 빵, 치즈, 버터 등이 중요한 재료입니다.",
         },
       ],
     };
   },
 };
 </script>
-
 <style lang="scss">
 // intro__wrap
 .intro__inner {
   display: flex;
   justify-content: space-between;
 }
+.intro__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.active {
+  display: flex !important;
+}
 .intro__title {
   width: 33%;
-
   span {
     background-color: #ff3344;
     font-size: 14px;
@@ -87,24 +101,22 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
   > div {
     width: 48%;
+    // background-color: #ccc;
     margin-bottom: 40px;
-
-    h4 {
+    > h4 {
+      display: inline-block;
       font-size: 24px;
       margin-bottom: 15px;
+      font-weight: 700;
     }
-    p {
-      font-weight: 300;
-      line-height: 1.6;
+    > p {
+      font-size: 18 px;
+      font-weight: 500;
     }
-    &:nth-child(3) {
-      margin-bottom: 0;
-    }
-    &:nth-child(4) {
-      margin-bottom: 0;
+    &:nth-child(1) {
+      margin-bottom: 15px;
     }
   }
 }

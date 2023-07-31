@@ -1,18 +1,20 @@
 <template>
-  <ContTitle title="youtubes" />
-  <YoutubeSlider />
-  <YoutubeSearch />
-  <YoutubeTag />
-  <YoutubeCont :youtubes="youtubes" />
+  <div class="youtube">
+    <ContTitle title="youtube" />
+    <YoutubeSlider :youtubes="youtubes" />
+    <YoutubeSearch @onSearch="search" />
+    <YoutubeTag @onSearch="search" />
+    <YoutubeCont :youtubes="youtubes" />
+  </div>
 </template>
 
 <script>
 import ContTitle from "@/components/layout/ContTitle.vue";
 import YoutubeSlider from "@/components/youtube/YoutubeSlider.vue";
 import YoutubeSearch from "@/components/youtube/YoutubeSearch.vue";
-import YoutubeCont from "@/components/youtube/YoutubeCont.vue";
 import YoutubeTag from "@/components/youtube/YoutubeTag.vue";
-import { ref } from "vue";
+import YoutubeCont from "@/components/youtube/YoutubeCont.vue";
+import { ref, onMounted } from "vue";
 
 export default {
   components: {
@@ -26,51 +28,34 @@ export default {
   setup() {
     const youtubes = ref([]);
 
-    const TopYoutubes = async () => {
-      await fetch(
-        "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=%EB%89%B4%EC%A7%84%EC%8A%A4&type=video&key=AIzaSyB6LEqldGdm11AvV2H1fw3J1gEcfeNZJIk"
-      )
-        .then((response) => response.json())
-        .then((result) => {
-          console.log(result);
-          youtubes.value = result.items;
-        })
-        .catch((error) => console.log("error", error));
+    const search = async (query) => {
+      try {
+        const response = await fetch(
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=${query}&type=video&key=AIzaSyDu13VB1Y6cnu4y9DKqA3bLgAXuqaw4BFU`
+        );
+        const result = await response.json();
+        youtubes.value = result.items;
+      } catch (error) {
+        console.log("error", error);
+      }
     };
-    TopYoutubes();
+
+    onMounted(async () => {
+      try {
+        const response = await fetch(
+          "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C&type=video&key=AIzaSyDu13VB1Y6cnu4y9DKqA3bLgAXuqaw4BFU"
+        );
+        const result = await response.json();
+        youtubes.value = result.items;
+      } catch (error) {
+        console.log("error", error);
+      }
+    });
 
     return {
       youtubes,
-      TopYoutubes,
+      search,
     };
   },
 };
 </script>
-
-<style lang="scss">
-.youtube__cont {
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 100px;
-
-    li {
-      width: 24.333%;
-      margin-bottom: 4%;
-
-      img {
-        border-radius: 4px;
-      }
-
-      span {
-        display: block;
-        margin: 4px 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-  }
-}
-</style>

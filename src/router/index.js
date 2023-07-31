@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import IntroView from "../views/IntroView.vue";
-import PortView from "../views/PortView.vue";
 import MovieView from "../views/MovieView.vue";
-import YoutubeView from "../views/YoutubeView.vue";
+import PortView from "../views/PortView.vue";
 import UnsplashView from "../views/UnsplashView.vue";
+import YoutubeView from "../views/YoutubeView.vue";
 
 const routes = [
   {
@@ -18,6 +18,11 @@ const routes = [
     component: IntroView,
   },
   {
+    path: "/movie",
+    name: "movie",
+    component: MovieView,
+  },
+  {
     path: "/port",
     name: "port",
     component: PortView,
@@ -28,14 +33,14 @@ const routes = [
     component: MovieView,
   },
   {
+    path: "/unsplash",
+    name: "unsplashView",
+    component: UnsplashView,
+  },
+  {
     path: "/youtube",
     name: "youtube",
     component: YoutubeView,
-  },
-  {
-    path: "/unsplash",
-    name: "unsplash",
-    component: UnsplashView,
   },
 ];
 
